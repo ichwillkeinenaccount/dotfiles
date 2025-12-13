@@ -5,9 +5,11 @@ cd ~
 mv .bashrc .bashrc.bak
 
 sudo pacman -Syu
-sudo pacman -S zsh neovim git lazygit curl luarocks gcc ripgrep xclip tree-sitter-cli tmux ghostscript tectonic mermaid-cli fd helm terraform ansible k9s kubectl python3 go fastfetch btop
+sudo pacman -S --needed vi zsh neovim git lazygit curl luarocks gcc ripgrep xclip tree-sitter-cli tmux ghostscript tectonic mermaid-cli fd helm terraform ansible k9s kubectl python3 go fastfetch btop
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+cd ~
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 cd ~
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 cd ~
